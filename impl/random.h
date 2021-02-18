@@ -23,6 +23,8 @@ static TLS struct {
 # include "random/mbed.h"
 #elif defined(RIOT_VERSION)
 # include "random/riot.h"
+#elif defined(__STM32__)
+# include "random/stm32.h"
 #else
 #error Unsupported platform
 #endif
