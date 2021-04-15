@@ -34,6 +34,9 @@ gimli_core(uint32_t state[gimli_BLOCKBYTES / 4])
             x        = state[1];
             state[1] = state[3];
             state[3] = x;
+            break;
+        default:
+            break;
         }
     }
 }
