@@ -1,5 +1,6 @@
 /* Interface with STM32 model microcontroller. Implements stm_true_random() */
 #include "adc.h"
+#include "node_config.h" // HYDROGEN_CONTEXT
 
 /**
  * @Brief    Function to return a true random number source from STM32 microcontrollers.
@@ -37,7 +38,7 @@ static inline uint32_t stm_true_random(void)
 static int
 hydro_random_init(void)
 {
-    const char       ctx[hydro_hash_CONTEXTBYTES] = { 'h', 'y', 'd', 'r', 'o', 'P', 'R', 'G' };
+    const char       ctx[hydro_hash_CONTEXTBYTES] = HYDROGEN_CONTEXT;
     hydro_hash_state st;
     uint16_t         ebits = 0;
 
